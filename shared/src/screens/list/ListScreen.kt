@@ -3,7 +3,18 @@ package com.jetbrains.kmpapp.screens.list
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -22,6 +33,7 @@ import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.jetbrains.kmpapp.data.MuseumObject
+import com.jetbrains.kmpapp.getPlatformName
 import com.jetbrains.kmpapp.screens.EmptyScreenContent
 import com.jetbrains.kmpapp.screens.detail.DetailScreen
 import io.kamel.image.KamelImage
@@ -35,16 +47,18 @@ data object ListScreen : Screen {
 
         val objects by screenModel.objects.collectAsState()
 
-        AnimatedContent(objects.isNotEmpty()) { objectsAvailable ->
-            if (objectsAvailable) {
-                ObjectGrid(
-                    objects = objects,
-                    onObjectClick = { objectId ->
-                        navigator.push(DetailScreen(objectId))
-                    }
-                )
-            } else {
-                EmptyScreenContent(Modifier.fillMaxSize())
+        Column(Modifier.fillMaxSize()) {
+            AnimatedContent(objects.isNotEmpty()) { objectsAvailable ->
+                if (objectsAvailable) {
+                    ObjectGrid(
+                        objects = objects,
+                        onObjectClick = { objectId ->
+                            navigator.push(DetailScreen(objectId))
+                        }
+                    )
+                } else {
+                    EmptyScreenContent(Modifier.fillMaxSize())
+                }
             }
         }
     }
@@ -64,6 +78,9 @@ private fun ObjectGrid(
             .padding(WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal).asPaddingValues()),
         contentPadding = WindowInsets.safeDrawing.only(WindowInsetsSides.Vertical).asPaddingValues(),
     ) {
+        item {
+            Text("Museum on ${getPlatformName()}", Modifier.fillMaxWidth().padding(8.dp))
+        }
         items(objects, key = { it.objectID }) { obj ->
             ObjectFrame(
                 obj = obj,

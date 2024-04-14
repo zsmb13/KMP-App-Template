@@ -1,7 +1,7 @@
 product: ios/app
 
 dependencies:
-  - ../shared
+    - ../shared
 
 settings:
-  compose: enabled
+    compose: enabled

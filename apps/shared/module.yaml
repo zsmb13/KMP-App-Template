@@ -2,9 +2,7 @@ product:
   type: lib
   platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
 
-dependencies: 
-  - $compose.runtime
-  - $compose.foundation
+dependencies:
   - $compose.material
   - $libs.ktor.client.core
   - $libs.ktor.client.content.negotiation
@@ -17,13 +15,5 @@ dependencies:
   - ../../features/detail
   - ../../features/list
 
-dependencies@android:
-  - $libs.ktor.client.okhttp
-
-dependencies@ios:
-  - $libs.ktor.client.darwin
-
 settings: 
   compose: enabled
-  kotlin:
-    serialization: json

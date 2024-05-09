@@ -1,0 +1,11 @@
+dependencies:
+  - $compose.runtime
+  - $compose.foundation
+  - $compose.material
+  - $libs.kamel
+  - $libs.koin.core
+  - $libs.voyager.navigator
+  - $libs.voyager.koin
+
+settings:
+  compose: enabled

@@ -4,3 +4,4 @@ product:
 
 apply:
   - ../ui-feature-template.yaml
+  - ../ui.module-template.yaml

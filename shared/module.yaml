@@ -15,8 +15,8 @@ dependencies:
     - $libs.ktor.client.content.negotiation
     - $libs.ktor.serialization.kotlinx.json
     - $libs.koin.core
-    - cafe.adriel.voyager:voyager-navigator:1.0.0
     - cafe.adriel.voyager:voyager-koin:1.0.0
+    - cafe.adriel.voyager:voyager-navigator:1.0.0
     - media.kamel:kamel-image:0.9.1
 
 dependencies@android:

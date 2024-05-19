@@ -1,19 +1,19 @@
-product: 
-  type: lib
-  platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
+product:
+    type: lib
+    platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
 
 dependencies:
-  - $compose.material
-  - $libs.ktor.client.core
-  - $libs.ktor.client.content.negotiation
-  - $libs.ktor.serialization.kotlinx.json
-  - $libs.kamel
-  - $libs.koin.core
-  - $libs.voyager.navigator
-  - $libs.voyager.koin
-  - ../../data/repository
-  - ../../features/detail
-  - ../../features/list
+    - $compose.material
+    - $libs.ktor.client.core
+    - $libs.ktor.client.content.negotiation
+    - $libs.ktor.serialization.kotlinx.json
+    - $libs.kamel
+    - $libs.koin.core
+    - $libs.voyager.navigator
+    - $libs.voyager.koin
+    - ../../data/repository
+    - ../../features/detail
+    - ../../features/list
 
-settings: 
-  compose: enabled
+settings:
+    compose: enabled

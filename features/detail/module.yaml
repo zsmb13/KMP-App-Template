@@ -1,10 +1,10 @@
-product: 
-  type: lib
-  platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
+product:
+    type: lib
+    platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
 
 apply:
-  - ../ui.module-template.yaml
+    - ../ui.module-template.yaml
 
 dependencies:
-  - ../../data/repository
-  - ../common
+    - ../../data/repository
+    - ../common

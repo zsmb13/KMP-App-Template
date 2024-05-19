@@ -1,12 +1,12 @@
 product: android/app
 
 dependencies:
-  - ../shared
-  - $libs.androidx.compose.ui.tooling.preview
-  - $libs.androidx.activity.compose
+    - ../shared
+    - $libs.androidx.compose.ui.tooling.preview
+    - $libs.androidx.activity.compose
 
-settings: 
-  compose: enabled
-  android:
-    applicationId: com.jetbrains.kmpapp
-    namespace: com.jetbrains.kmpapp
+settings:
+    compose: enabled
+    android:
+        applicationId: com.jetbrains.kmpapp
+        namespace: com.jetbrains.kmpapp
